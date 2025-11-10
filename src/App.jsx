@@ -1,5 +1,5 @@
-import './App.jsx'
-import {useState} from 'react'
+
+import {useState} from 'react';
 
 
       const articoli = [
@@ -27,11 +27,16 @@ function App() {
   //let gianni ="gianni";
   //const [ pippo, setPippo ] = useState("pippo");
   //const [ numeroPanini, setNumeroPanini ] = useState(0);
-const [titoloArticoli, setTitoloArticoli] = useState(articoli);
+const [titoloArticoli, setTitoloArticoli] = useState('');
   return (
     <>
-    <form>
-    
+    <form onSubmit={handleSubmit}>
+    <input type="text"
+            value={titoloArticoli}
+            onChange={e => setTitoloArticoli(e.target.value)}}
+    />
+            <button type="submit"> Nuovo Articolo </button>
+
 
     </form>
 
@@ -54,7 +59,7 @@ const [titoloArticoli, setTitoloArticoli] = useState(articoli);
     }
 
     </>
-  )
-}
+  );
+};
 
 export default App
