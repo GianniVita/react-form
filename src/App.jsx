@@ -1,5 +1,6 @@
-import {articoli} from './assets/ListaArticoli';
-export default ListaArticoli;
+import './App.jsx'
+import {useState} from 'react'
+
 
       const articoli = [
       {
@@ -21,27 +22,36 @@ export default ListaArticoli;
       ];
 
 
-      function ListaArticoli() {
-    return (
-      <ul>
-        {articoli.map(articolo => (
-          <li key={articolo.id}>{articolo.titolo}</li>
-        ))}
-      </ul>
-      );
-}
-
-
-
-import './App.css'
-
 function App() {
 
+  //let gianni ="gianni";
+  //const [ pippo, setPippo ] = useState("pippo");
+  //const [ numeroPanini, setNumeroPanini ] = useState(0);
+const [titoloArticoli, setTitoloArticoli] = useState(articoli);
   return (
     <>
+    <form>
+    
+
+    </form>
 
 
 
+    {
+
+      titoloArticoli.map((articolo, index) => {
+        return(
+
+          <div key={index}>
+              <p>{articolo.titolo}</p>
+            </div>
+
+
+        )
+
+      })
+
+    }
 
     </>
   )
